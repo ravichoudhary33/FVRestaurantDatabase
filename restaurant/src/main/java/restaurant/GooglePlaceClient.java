@@ -51,9 +51,9 @@ public class GooglePlaceClient {
 		String[] loc = latLng.split(",");
 		// create the latLng object
 		LatLng location = new LatLng(Double.parseDouble(loc[0]), Double.parseDouble(loc[1]));
-		// now request nearby search query around location within 30km of type
+		// now request nearby search query around location within 2km of type
 		// restaurant
-		NearbySearchRequest request = PlacesApi.nearbySearchQuery(context, location).radius(30000)
+		NearbySearchRequest request = PlacesApi.nearbySearchQuery(context, location).radius(2000)
 				.type(PlaceType.RESTAURANT);
 
 		// to store the next page token

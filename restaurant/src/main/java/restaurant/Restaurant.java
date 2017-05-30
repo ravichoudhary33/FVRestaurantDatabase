@@ -2,10 +2,8 @@ package restaurant;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Set;
 
 import com.google.maps.model.OpeningHours;
-import com.google.maps.model.PlaceDetails;
 
 /**
  * @author ravi
@@ -17,8 +15,6 @@ public class Restaurant {
 	// fields for the restaurant
 
 	// foursquare attributes
-
-	private String canonicalUrl;
 	private List<CategoryInfo> categories;
 	private ContactInfo contact;
 	private String description;
@@ -33,6 +29,8 @@ public class Restaurant {
 	private HoursInfo hours;
 	private PriceInfo price;
 	private Integer rating;
+	private Long beenHere;
+	private Long likes;
 
 	// google place attributes
 
@@ -40,8 +38,7 @@ public class Restaurant {
 	private OpeningHours openingHours;
 	private Boolean permanentlyClosed;
 	private String googlePlaceId;
-	private PlaceDetails.Review[] reviews;
-	private Set<String> types;
+	private String[] types;
 	private String url;
 	private String vicinity;
 
@@ -121,24 +118,9 @@ public class Restaurant {
 	}
 
 	/**
-	 * @return the reviews
-	 */
-	public PlaceDetails.Review[] getReviews() {
-		return reviews;
-	}
-
-	/**
-	 * @param reviews
-	 *            the reviews to set
-	 */
-	public void setReviews(PlaceDetails.Review[] reviews) {
-		this.reviews = reviews;
-	}
-
-	/**
 	 * @return the types
 	 */
-	public Set<String> getTypes() {
+	public String[] getTypes() {
 		return types;
 	}
 
@@ -146,7 +128,7 @@ public class Restaurant {
 	 * @param types
 	 *            the types to set
 	 */
-	public void setTypes(Set<String> types) {
+	public void setTypes(String[] types) {
 		this.types = types;
 	}
 
@@ -361,21 +343,6 @@ public class Restaurant {
 	}
 
 	/**
-	 * @return the canonicalUrl
-	 */
-	public String getCanonicalUrl() {
-		return canonicalUrl;
-	}
-
-	/**
-	 * @param canonicalUrl
-	 *            the canonicalUrl to set
-	 */
-	public void setCanonicalUrl(String canonicalUrl) {
-		this.canonicalUrl = canonicalUrl;
-	}
-
-	/**
 	 * @return the hours
 	 */
 	public HoursInfo getHours() {
@@ -390,6 +357,36 @@ public class Restaurant {
 		this.hours = hours;
 	}
 
+	/**
+	 * @return the beenHere
+	 */
+	public Long getBeenHere() {
+		return beenHere;
+	}
+
+	/**
+	 * @param beenHere
+	 *            the beenHere to set
+	 */
+	public void setBeenHere(Long beenHere) {
+		this.beenHere = beenHere;
+	}
+
+	/**
+	 * @return the likes
+	 */
+	public Long getLikes() {
+		return likes;
+	}
+
+	/**
+	 * @param likes
+	 *            the likes to set
+	 */
+	public void setLikes(Long likes) {
+		this.likes = likes;
+	}
+
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -397,13 +394,13 @@ public class Restaurant {
 	 */
 	@Override
 	public String toString() {
-		return "Restaurant [canonicalUrl=" + canonicalUrl + ", categories=" + categories + ", contact=" + contact
-				+ ", description=" + description + ", foursquareId=" + foursquareId + ", location=" + location
-				+ ", menu=" + menu + ", name=" + name + ", stats=" + stats + ", tags=" + Arrays.toString(tags)
-				+ ", timeZone=" + timeZone + ", verified=" + verified + ", hours=" + hours + ", price=" + price
-				+ ", rating=" + rating + ", photos=" + photos + ", openingHours=" + openingHours
-				+ ", permanentlyClosed=" + permanentlyClosed + ", googlePlaceId=" + googlePlaceId + ", reviews="
-				+ Arrays.toString(reviews) + ", types=" + types + ", url=" + url + ", vicinity=" + vicinity + "]";
+		return "Restaurant [categories=" + categories + ", contact=" + contact + ", description=" + description
+				+ ", foursquareId=" + foursquareId + ", location=" + location + ", menu=" + menu + ", name=" + name
+				+ ", stats=" + stats + ", tags=" + Arrays.toString(tags) + ", timeZone=" + timeZone + ", verified="
+				+ verified + ", hours=" + hours + ", price=" + price + ", rating=" + rating + ", beenHere=" + beenHere
+				+ ", likes=" + likes + ", photos=" + photos + ", openingHours=" + openingHours + ", permanentlyClosed="
+				+ permanentlyClosed + ", googlePlaceId=" + googlePlaceId + ", types=" + Arrays.toString(types)
+				+ ", url=" + url + ", vicinity=" + vicinity + "]";
 	}
 
 }

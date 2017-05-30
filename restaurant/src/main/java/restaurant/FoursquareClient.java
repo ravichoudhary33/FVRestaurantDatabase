@@ -81,9 +81,9 @@ public class FoursquareClient {
 		List<String> venuesId = new ArrayList<String>();
 
 		try {
-			// get the venues search result around 30,000m around user position
+			// get the venues search result around 2,000m around user position
 			Result<VenuesSearchResult> result = foursquareApi.venuesSearch(latLng, null, null, null, null, 50, null,
-					categoryId, null, null, null, 30000, null);
+					categoryId, null, null, null, 2000, null);
 
 			// if request is successfull get the id's else just return null at
 			// the end

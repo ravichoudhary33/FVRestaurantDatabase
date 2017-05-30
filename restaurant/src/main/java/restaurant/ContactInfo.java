@@ -5,7 +5,6 @@ public class ContactInfo {
 	private String email;
 	private String facebook;
 	private String twitter;
-
 	private String phone;
 
 	public ContactInfo(String email, String facebook, String twitter, String phone) {

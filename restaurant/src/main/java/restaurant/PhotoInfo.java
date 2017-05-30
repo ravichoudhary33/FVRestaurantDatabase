@@ -9,9 +9,10 @@ public class PhotoInfo {
 	private String prefix; // prefix of the photo
 	private String suffix; // suffix of the photo
 	private SourceInfo source; // source of the photo
+	private Boolean isBestPhoto;
 
 	public PhotoInfo(String id, String url, Integer height, Integer width, String visibility, String prefix,
-			String suffix, SourceInfo source) {
+			String suffix, SourceInfo source, Boolean isBestPhoto) {
 		this.id = id;
 		this.url = url;
 		this.height = height;
@@ -20,6 +21,7 @@ public class PhotoInfo {
 		this.prefix = prefix;
 		this.suffix = suffix;
 		this.source = source;
+		this.isBestPhoto = isBestPhoto;
 	}
 
 	/**
@@ -142,6 +144,21 @@ public class PhotoInfo {
 		this.source = source;
 	}
 
+	/**
+	 * @return the isBestPhoto
+	 */
+	public boolean isBestPhoto() {
+		return isBestPhoto;
+	}
+
+	/**
+	 * @param isBestPhoto
+	 *            the isBestPhoto to set
+	 */
+	public void setBestPhoto(boolean isBestPhoto) {
+		this.isBestPhoto = isBestPhoto;
+	}
+
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -150,7 +167,8 @@ public class PhotoInfo {
 	@Override
 	public String toString() {
 		return "PhotoInfo [id=" + id + ", url=" + url + ", height=" + height + ", width=" + width + ", visibility="
-				+ visibility + ", prefix=" + prefix + ", suffix=" + suffix + ", source=" + source + "]";
+				+ visibility + ", prefix=" + prefix + ", suffix=" + suffix + ", source=" + source + ", isBestPhoto="
+				+ isBestPhoto + "]";
 	}
 
 }
